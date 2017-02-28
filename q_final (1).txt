@@ -1,0 +1,53 @@
+<?php
+$sql="select tname from a1 where points=(select max(points) from a1)";
+$res=link->query($sql);
+$row=$res->fetch_assoc();
+$s=$row["tname"];
+$a1="insert into quarter_final values('$s',1)";
+$sql1="update a1 set points=-1 where tname='$s'";
+
+$sql2="select tname from a1 where points=(select max(points) from a1)";
+$res=link->query($sql2);
+$row=$res->fetch_assoc();
+$s=$row["tname"];
+$a2="insert into quarter_final values('$s',2)";
+
+$sql4="select tname from b1 where points=(select max(points) from b1)";
+$res=link->query($sql4);
+$row=$res->fetch_assoc();
+$s=$row["tname"];
+$a2="insert into quarter_final values('$s',3)";
+$sql5="update b1 set points=-1 where tname='$s'";
+
+$sql6="select tname from b1 where points=(select max(points) from b1)";
+$res=link->query($sql6);
+$row=$res->fetch_assoc();
+$s=$row["tname"];
+$a2="insert into quarter_final values('$s',4)";
+
+$sql7="select tname from c1 where points=(select max(points) from c1)";
+$res=link->query($sql7);
+$row=$res->fetch_assoc();
+$s=$row["tname"];
+$a2="insert into quarter_final values('$s',5)";
+$sql8="update c1 set points=-1 where tname='$s'";
+
+$sql9="select tname from c1 where points=(select max(points) from c1)";
+$res=link->query($sql9);
+$row=$res->fetch_assoc();
+$s=$row["tname"];
+$a2="insert into quarter_final values('$s',6)";
+
+$sql10="select tname from d1 where points=(select max(points) from d1)";
+$res=link->query($sql10);
+$row=$res->fetch_assoc();
+$s=$row["tname"];
+$a2="insert into quarter_final values('$s',7)";
+$sql11="update d1 set points=-1 where team_name='$s'";
+
+$sql12="select tname from d1 where points=(select max(points) from d1)";
+$res=link->query($sql12);
+$row=$res->fetch_assoc();
+$s=$row["tname"];
+$a2="insert into quarter_final values('$s',8)";
+?>

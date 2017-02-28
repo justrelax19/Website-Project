@@ -1,0 +1,81 @@
+<?php
+include('connect1.php');
+$qq="select * from final";
+$ress=$link->query($qq);
+while($row=$ress->fetch_assoc())
+{
+$var1=$row["name"];
+$row=$res->fetch_assoc();
+$var2=$row["name"];
+
+$sql1="select team_confidence,team_popularity,attack,mid,defence from team where name='$var1'";
+$result1=$link->query($sql1);
+$sql2="select team_confidence,team_popularity,attack,mid,defence from team where name='$var2'";
+$result2=$link->query($sql2);
+$sql3="select * from player where overall>=85 and tname='$var1'";
+$result3=$link->query($sql3);
+$sql4="select * from player where overall>=85 and tname='$var2'";
+$result4=$link->query($sql4);
+$winprobA=0;
+$winprobB=0;
+if($result1->num_rows>0 && $result2->num_rows>0)
+{
+	while($row1=$result1->fetch_assoc() && $row2=$result2->fetch_assoc())
+	{
+		if($row1["team_confidence"]>$row2["team_confidence"])
+		{
+			$winprobA+=($row1["team_confidence"]-$row2["team_confidence"])/10;			
+		}
+		else
+		{
+			$winprobB+=($row2["team_confidence"]-$row1["team_confidence"])/10;	
+		}
+		if($row1["team_popularity"]>$row2["team_popularity"])
+		{
+			$winprobA+=($row1["team_popularity"]-$row2["team_popularity"])/10;			
+		}
+		else
+		{
+			$winprobB+=($row2["team_popularity"]-$row1["team_popularity"])/10;	
+		}
+		$x=$row1["attack"]+$row1["mid"]+$row1["defence"];
+		$y=$row2["attack"]+$row2["mid"]+$row2["defence"];
+		if($x>$y)
+		{
+			$winprobA+=($x-$y)/10;
+		}
+		else
+		{
+			$winprobB+=($y-$x)/10;
+		}
+		
+		if($result3->num_rows>$result4->num_rows)
+		{
+			$q=$result3->num_rows-$result4->num_rows;
+			$q=$q/40;
+			$winprobA+=$q;
+		}
+		else
+		{
+			$q=$result4->num_rows-$result3->num_rows;
+			$q=$q/40;
+			$winprobB+=$q;
+		}
+		if($winprobA-$winprobB>0.0001)
+		{
+			$sql5="update team set team_confidence=team_confidence+2 where name='$var1'";
+			$sql6="update team set team_popularity=team_popularity+2 where name='$var1'";
+			$sql7="update team set attack=attack+2 where name='$var1'";
+			echo "Winner";
+		}
+		else
+		{
+			$sql5="update team set team_confidence=team_confidence+2 where name='$var2'";
+			$sql6="update team set team_popularity=team_popularity+2 where name='$var2'";
+			$sql7="update team set defence=defence-2 where name='$var2'";
+			echo "winner";
+		}
+	}
+}
+}
+?>

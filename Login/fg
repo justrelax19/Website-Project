@@ -1,0 +1,73 @@
+<html>
+<head>
+<?php
+	include'init.php';
+?>
+	<link rel="stylesheet" href="login.css">
+</head>
+
+ 
+
+<?php
+
+logged_in_redirect();
+if(empty($_POST) === false){
+$username=$_POST['uname'];
+$password=$_POST['password'];
+  if(empty($username) === true || empty($password) === true){
+  $errors[]="You need to enter username and password";
+  echo output_errors($errors);
+  echo "<script>
+      
+      alert('You need to enter the username and password!');
+      window.location='http://localhost//Login/login1.php';
+      </script>";
+  }
+  else if(user_exists($username)===false){
+  $errors[]="We can't find you registered. Please Register with us!";
+  echo output_errors($errors);
+  echo "<script>
+      alert('Are you registered with us? First register and then try again!');
+      window.location='http://localhost//Login/login1.php';
+      </script>";
+  }
+  
+  else{
+  if(strlen($password)>20 || strlen($password)<=8){
+  $errors[]="Password must be less than 20 characters and more than 8 characters";
+  echo output_errors($errors);
+  echo "<script>
+      alert('Password must be less than 10 characters and more than 4 characters!');
+      window.location='http://localhost//Login/login1.php';
+      </script>";
+  }
+  $login=login($username,$password);//This function returns user_id
+  if($login===false){
+  $errors[]="That username/password is incorrect";
+  echo output_errors($errors);
+  echo "<script>
+      alert('We think that your username/password is incorrect.Please try again!');
+      window.location='http://localhost//Login/login1.php';
+      </script>";
+  }else{
+  $_SESSION['uname']=$login;
+  header('Location:index.php');
+  exit();
+  }
+  }
+
+}
+?>
+<body>
+	<div id="allcontent">
+	<form action= "<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+		<h1> Login to your account:</h1>
+		<input type="text" name="uname" placeholder="Enter your username"><br><br>
+		<input type="password" name="password" placeholder="Enter your Password"><br><br>
+		<input type="submit" value="Log In"><br>
+		<a href="../SignUp/proform.php">Sign Up</a>&nbsp;&nbsp;
+		<a href="../Login/forgot.php">Forgot Password</a>
+	</form>
+	</div>
+</body>
+</html>

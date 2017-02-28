@@ -1,0 +1,281 @@
+#cssmenu ul,
+#cssmenu li,
+#cssmenu span,
+#cssmenu a {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+#cssmenu {
+  line-height: 1;
+  background: black;       /*Background col of css menu */
+  width: auto;
+  padding-left:110px;
+}
+#cssmenu:after,
+#cssmenu ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#cssmenu a {                        /*links in menu*/
+  background: #141414;
+  color: #ffffff;
+  display: block;
+  padding: 20px 19px;
+  text-decoration: none;
+}
+#cssmenu ul {
+  list-style: none;
+}
+#cssmenu > ul > li {                /*the button in menu bar */
+  display: inline-block;
+  float: left;
+  margin: 0px;
+  padding-left:30px;
+  padding-right:30px;
+}
+#cssmenu.align-center {
+  text-align: center;
+}
+#cssmenu.align-center > ul > li {
+  float: none;
+}
+#cssmenu.align-center ul ul {
+  text-align: left;
+}
+#cssmenu.align-right > ul {
+  float: right;
+}
+#cssmenu.align-right ul ul {
+  text-align: right;
+}
+#cssmenu > ul > li > a {
+  color: #ffffff;
+  font-size: 12px;
+}
+#cssmenu > ul > li:hover:after {            /* it controls the tiny pointer at the bottom of the menu*/
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 43%;
+  bottom: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #0fa1e0;
+  
+}
+#cssmenu > ul > li:first-child > a {
+ 
+}
+#cssmenu.align-right > ul > li:first-child > a,
+#cssmenu.align-center > ul > li:first-child > a {
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+#cssmenu.align-right > ul > li:last-child > a {
+ 
+}
+#cssmenu > ul > li.active > a,
+#cssmenu > ul > li:hover > a {
+ color: #ffffff;
+  background: #070707;
+ }
+#cssmenu .has-sub {
+  z-index: 1;
+}
+#cssmenu .has-sub:hover > ul {
+  display: block;
+}
+#cssmenu .has-sub ul {   
+  display: none;
+  position: fixed;
+  width: 1000PX; 						/* CONTROLS THE WIDTH OF THE SUB MENU*/
+  top: 144px;
+  left: 175px;
+  right:400px;
+}
+#cssmenu.align-right .has-sub ul {
+  left: auto;
+  right: 0;
+}
+#cssmenu .has-sub ul li {
+  *margin-bottom: -1px;
+}
+#cssmenu .has-sub ul li a {
+  filter: none;
+  display: block;
+  padding:0px;
+  background:NONE;
+  
+}
+#cssmenu .has-sub ul li:hover a {
+  /*background: #0c7fb0;*/
+}
+#cssmenu ul ul li:hover > a {
+  color: #ffffff;
+}
+#cssmenu .has-sub .has-sub:hover > ul {
+  display: block;
+}
+#cssmenu .has-sub .has-sub ul {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+#cssmenu.align-right .has-sub .has-sub ul,
+#cssmenu.align-right ul ul ul {
+  left: auto;
+  right: 100%;
+}
+#cssmenu .has-sub .has-sub ul li a {
+  background: #0c7fb0;
+  border-bottom: 1px dotted #31b7f1;
+}
+#cssmenu .has-sub .has-sub ul li a:hover {
+  background: #0a6d98;
+}
+#cssmenu ul ul li.last > a,
+#cssmenu ul ul li:last-child > a,
+#cssmenu ul ul ul li.last > a,
+#cssmenu ul ul ul li:last-child > a,
+#cssmenu .has-sub ul li:last-child > a,
+#cssmenu .has-sub ul li.last > a {
+  border-bottom: 0;
+}
+#dropdown{
+background-color:#333333;
+margin-top:10px;
+
+}
+#ddt{
+	color:white;
+	border-bottom:solid;
+	border-bottom-color: #ff3e42;
+	padding-bottom:20px;
+	text-align:center;
+	
+}
+div#tablecontainer{
+	display:table;
+	background-color:#333333;
+	
+}
+div#tablerow{
+	display:table-row;
+	padding:20px;
+	margin-right:30px;
+}
+#ga{
+	display:table-cell;
+	padding:20px;
+	padding-right:70px;
+	padding-left:100px;
+}
+#gb{
+	display:table-cell;
+	padding:20px;
+	padding-right:70px;
+}
+#gc{
+	display:table-cell;
+	padding:20px;
+	padding-right:70px;
+}
+#gd{
+	display:table-cell;
+	padding:20px;
+	padding-right:100px;
+}
+li{
+	color:silver;
+}
+#pinklinks{
+	background-color:#FF3399;
+	display:table-cell;
+	padding:20px;
+	margin-right:100px;
+	color:white;
+	
+}
+#ddt2{
+	color:white;
+	border-bottom:solid;
+	border-bottom-color: #FF0099;
+	padding-bottom:20px;
+	text-align:center;
+	
+}
+#recent{
+	display:table-cell;
+	padding:20px;
+	margin-right:100px;
+}
+#featured{
+	display:table-cell;
+	padding:20px;
+	margin-right:100px;
+	border-right:solid thin #444444;
+}
+#featured2{
+	display:table-cell;
+	padding:20px;
+	margin-right:100px;
+	border-right:solid thin #444444;
+}
+#ddt3{
+	color:white;
+	border-bottom:solid;
+	border-bottom-color: #FFFF00;
+	padding-bottom:20px;
+	text-align:center;
+	
+}
+#recent2{
+	display:table-cell;
+	padding:20px;
+	
+	margin-top:40px;
+	margin-right:100px;
+}
+
+#fr{
+	display:table-cell;
+	padding:0px 20px 20px 20px;
+		
+}
+#wwr{
+	display:table-cell;
+	padding:20px;
+	border-right:solid thin #444444;
+	margin-top:40px;
+	margin-right:100px;
+}
+#wwd{
+	display:table-cell;
+	padding:20px;
+	border-right:solid thin #444444;
+	margin-top:40px;
+	margin-right:100px;
+}
+#ddt4{
+	color:white;
+	border-bottom:solid;
+	border-bottom-color: #1a75ff;
+	padding-bottom:20px;
+	text-align:center;
+	
+}
+#ddt5{
+	color:white;
+	border-bottom:solid;
+	border-bottom-color: #1a75ff;
+	padding-bottom:20px;
+	text-align:center;
+	margin-top:0px;
+	padding-top:0px;
+}

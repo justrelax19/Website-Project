@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>What we Are</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+<script language="JavaScript">
+var i = 0;
+var path = new Array();
+path[0] = "../Images/back/image_1.jpg";
+path[1] = "../Images/back/s2.jpg";
+path[2] = "../Images/back/s3.jpg";
+path[3] = "../Images/back/s4.jpg";
+path[4] = "../Images/back/s1.jpg";
+
+function swapImage()
+{
+   document.slide.src = path[i];
+   if(i < path.length - 1) i++; else i = 0;
+   setTimeout("swapImage()",3000);
+}
+window.onload=swapImage;
+</script>
+<p style="font-size:36px;">About TGIF</p>
+<br>
+<fieldset>
+<p style="font-size:30px;">Who We Are</p>
+<hr>
+<img name="slide" width="1200" height="500" src="../Images/back/image_1.jpg"/>
+<br>
+<p style="color:grey; padding-right:500pt;">The TGIF is the organising body of the FIFA with responsibility for the competition, its Rule Book and the centralised broadcast and other commercial rights.</p>
+<p style="padding-right:500pt;">However, we do not operate in isolation, instead we work proactively and constructively with our Member Teams and the other football authorities to improve the quality of football across the world.
+Here is who we work with:</p>
+<h2 style="color:blue;">The Team Members of TGIF</h2>
+<p style="padding-right:500pt;">The TGIF is a private company in coalition with its 16 Member Clubs who make up the League at any one time.
+Each individual club is independent: working within the rules of football, as defined by the TGIF, Uefa and Fifa.</p>
+<p style="padding-right:500pt;">Each of the 16 teams is a Shareholder in the TGIF.
+Consultation is at the heart of the TGIF and Shareholder meetings are the ultimate decision-making forum for TGIF policy and are held at regular intervals during the course of the season.</p>
+<p style="padding-right:500pt;">Members have the opportunity to propose new rules or amendments at the Shareholder meeting.
+Each Member Team is entitled to one vote and all rule changes and major commercial contracts require the support of a two thirds vote, or 10 teams, to be agreed.</p>
+<p style="padding-right:500pt;">The TGIF Rule Book serves as a contract between the League, the Member Teams and one another, defining the structure and running of the competition.</p>
+<p style="padding-right:500pt;">Any serious breach of the Rule Book results in an independent three-person tribunal sitting to hear the case, ascertain guilt and set the punishment, which can range from fines to points deductions and, in extreme cases, expulsion from the competition.</p>
+</fieldset>
+<br><br>
+<strong>See Also:</strong><a href="fe.php" style="text-decoration:none; color:black;">Formal Relations</a>
+<br><br><br>
+<a style="padding-left:630px" href="../pages/index.php">Home</a>
+</body>
+</html>

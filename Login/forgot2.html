@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>Change Password </title>
+		<link rel="stylesheet" href="../pages/main.css">
+	</head>
+	
+	<body>
+	<?php
+// define variables and set to empty values
+
+$newpw =$confpw="";
+$submitnewpw="";
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
+    
+      
+      $submitnewpw = $_POST['newpw'];
+	  include("connect1.php");
+	  if(!preg_match('/^(?=.*\d)(?=.*[@#\-_$%^&+=ยง!\?])(?=.*[a-z])(?=.*[A-Z])[0-9A-Za-z@#\-_$%^&+=ยง!\?]{8,20}$/', $_POST["pass"]))
+	  {
+		  //header('Location:http://localhost//programs/error.php');
+		  echo "Password doesn't meet the requirements! Please try again!";
+		  echo "<script>
+		  alert('Password doesn't meet the requirements! Please try again!');
+		  window.location='http://localhost//SignUp/proform.php';
+		  </script>";
+	  }
+      else
+	  {
+		  $submitpasswordencr=md5($submitpassword) or (mysqli_error($link));  
+		  if($submitpasswordencr)
+			{
+			  $write="INSERT INTO signup(password) VALUES($submitpasswordencr')";
+			 // $extract1=$link->query($write);
+			 // $nn=mysqli_query($link,$write);
+			  if(!(mysqli_query($link,$write)))
+			  {
+				  echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+			  }
+			  else
+			  {
+				 // header('Location:http://localhost//programs/successful.php');
+				  echo "Your password changed Successfully!";
+				  echo "<script>
+						window.location='http://localhost//Pages/login1.htm';
+						</script>";
+			  }
+			}
+		  
+	  }
+	  }
+	  
+
+	
+	 
+	 
+
+function test_input($data)
+{
+     $data = trim($data);
+     $data = stripslashes($data);
+     $data = htmlspecialchars($data);
+     return $data;
+}
+
+?>
+
+	<form>
+	<fieldset>
+		<legend><strong>Change Password</strong></legend>
+		Enter your new password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <input type="text" id="newpw" name="newpw" required>
+	  <br><br>
+			  
+	   Confirm Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <input type="text" name="confpw" required>
+	</fieldset>
+	
+	<input type="submit" value="Next">
+	  <input type="reset" value="Reset">
+	  </form>
+	</body>
+</html>

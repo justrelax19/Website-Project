@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+body	{
+	background-image: url(../Images/flag/brasil.jpg); 
+	background-size: cover;
+	background-repeat : no-repeat;
+	background-position: center;
+	font-family:'pt sans',cursive;
+	background-attachment:fixed;
+	color:white;
+}
+#allcontent	{
+	width:1000px;
+	padding : 0px 20px 0px 20px;
+	margin-left : auto;
+	margin-right : auto;
+}
+#flag{
+	margin-left:33px;
+}
+#header	{
+	
+	background-color:white;
+	background-image: url(../Images/img5.jpg);
+	background-repeat:repeat-y;
+	background-size: cover;
+	padding : 10px;
+	border-style:outset;
+	width:977px;
+	
+	
+}
+.header_img	{
+	margin : 5px;
+	padding :0px 2px 1px 2px;
+	
+	
+}
+.header_logo	{
+	padding-left:17px;
+	
+	
+}
+.no	{
+	font-size:2em;
+}
+#content	{
+	background-color:#088887;
+	line-height:2em;
+	color:yellow;
+	padding:20px;
+	border-style:dashed;
+	opacity:0.8;
+}
+.info	{
+	font-weight:bold;
+}
+div#tablecontainer{
+	display:table;
+	margin-left:auto;
+	margin-right:auto;
+	border-spacing:20px;
+}
+div#tablerow{
+	display:table-row;
+}
+#stats1{
+	display: table-cell;
+	padding:10px;
+	padding-right:30px;
+}
+#stats2{
+	display: table-cell;
+	padding:10px;
+}
+h1{
+	text-align:center;
+	margin-bottom:10px;
+	margin-top:10px;
+}
+
+
+table, td{
+    border: 1px solid green;
+}
+
+th {
+    background-color: #00b33c;
+    color: yellow;
+}
+table {
+    border-collapse: collapse;
+}
+table, th, td {
+	border: 1px solid black;
+	padding-left:8px;
+	padding-right:5px;
+}
+#headerContainer{
+	 width:1000px;
+    position:fixed;
+    top:0px;
+	z-index:1;
+}
+td{
+	text-align:center;
+}

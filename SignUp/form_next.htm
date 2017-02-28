@@ -1,0 +1,48 @@
+ <html>
+ <head>
+	<link href='../pages/main.css' rel='stylesheet'>
+	<link href='form_next.css' rel='stylesheet'>	
+ </head>
+ <body>
+<div id="allcontent"> 
+	 <form>
+		 <fieldset>
+		 <legend><strong>Team:</strong></legend>
+		 Which Team do you support?
+		 <input list="team" name="team" required>
+		 <datalist id="team">
+			 <option value="Argentina">
+			 <option value="Belgium">
+			 <option value="Brazil">
+			 <option value="Chile">
+			 <option value="Czech Republic">
+			 <option value="Denmark">
+			 <option value="England">
+			 <option value="France">
+			 <option value="Germany">
+			 <option value="Italy">
+			 <option value="Netherlands">
+			 <option value="Poland">
+			 <option value="Portugal">
+			 <option value="Spain">
+			 <option value="Sweden">
+			 <option value="Uruguay">
+		 </datalist>
+		 <br><br>
+		 Select what information would you like to receive:<br>
+		 <ol>
+			<li><input type="checkbox" name="information" value="Fixture"> Fixture Change Information </li>
+			<li><input type="checkbox" name="information" value="ticket"> Ticket Information </li>
+			<li><input type="checkbox" name="information" value="broadcast"> Broadcast Schedules</li>
+			<li><input type="checkbox" name="information" value="communication"> Official communications directly from the Club</li>
+		 </ol>
+		 </fieldset>
+		 <input type="submit" value="Submit" onclick="location.href='../pages/index.htm';" >
+		 <input type="button" onclick="location.href='proform.htm';" value="Back" />
+	 </form>
+ </div>
+ </body>
+ </html>
+ <!-- TO ADD ANOTHER CLUB USE JAVASCRIPT AND FUNCTION OF IF -->
+ <!-- PUT NEXT AND BACK BUTTONS INSTEAD OF SUBMIT AND RESET -->
+ <!-- DISPLAY ALL DETAILS AND ASK TO ACCEPT TERMS AND CONDITIONS BEFORE SUBMISSION -->

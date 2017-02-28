@@ -1,0 +1,278 @@
+<html>
+<title>SignUp</title>
+<head>
+
+	<link href='../pages/main.css' rel='stylesheet'>
+	<link href='form.css' rel='stylesheet'>	
+</head>
+<script type="text/javascript">
+    function confirmEmail() {
+        var email = document.getElementById("email").value
+        var confemail = document.getElementById("cemail").value
+        if(email != cemail) {
+            alert('Email Does Not Match!');
+		else
+		    alert('Email Match!');	
+        }
+    }
+	function confirmPass() {
+        var email = document.getElementById("pass").value
+        var confemail = document.getElementById("cpass").value
+        if(pass != cpass) {
+            alert('Passwords Do Not Match!');
+		else
+		    alert('Passwords Match!');
+        }
+    }
+</script>
+<body>
+<div id="allcontent">
+<form action="signup.php" method="post">
+
+	<fieldset>
+		<legend><strong>Your Profile</strong></legend>
+		First name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="text" name="firstname" required>
+		<br><br>
+		Last name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="text" name="lastname" required>
+		<br><br>
+		User name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="text" name="uname" required>
+		<br><br>
+	  
+	  Date of Birth:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <input type="date" name="dob" max="1997-11-01" required>
+	  <p><strong>Note:</strong>
+	  You must be atleast 18 years old.</p>
+		Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="sex" value="male" checked>Male
+	  
+	  <input type="radio" name="sex" value="female">Female
+	  <br><br>
+	  E-mail:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <input type="email" name="email" id="email" required>
+	  <br><br>
+	 <!-- Confirm E-mail:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <input type="email" name="email" id="cemail"  onblur="confirmEmail()" required>
+	  <br><br>-->
+	  New Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <input type="password" name="password" id="pass">
+	  <br><br>
+	  Confirm Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <input type="password" name="password" id="cpass" onblur="confirmPass()" required>
+	  <br><br>
+	  Country of Residence:&nbsp;&nbsp;&nbsp;
+	  <input list="countries" name="country" required>
+	<datalist id="countries">
+	  <option value="Afghanistan">
+	  <option value="Albania">
+	  <option value="Algeria">
+	  <option value="Angola">
+	  <option value="Argentina">
+	  <option value="Australia">
+	  <option value="Austria">
+	  <option value="Azerbaijan">
+	  <option value="The Bahmas">
+	  <option value="Bahrain">
+	  <option value="Bangladesh">
+	  <option value="Barbados">
+	  <option value="Belgium">
+	  <option value="Bhutan">
+	  <option value="Boilivia">
+	  <option value="Bosnia and Herzegovina">
+	  <option value="Brazil">
+	  <option value="Bulgaria">
+	  <option value="Burma">
+	  <option value="Cambodia">
+	  <option value="Cameroon">
+	  <option value="Canada">
+	  <option value="Cape Verde">
+	  <option value="Central African Republic">
+	  <option value="Chad">
+	  <option value="Chile">
+	  <option value="China">
+	  <option value="Colombia">
+	  <option value="Costa Rica">
+	  <option value="Cuba">
+	  <option value="Cyprus">
+	  <option value="Czech Republic">
+	  <option value="Denmark">
+	  <option value="Dominica">
+	  <option value="Dominican Republic">
+	  <option value="East Timor">
+	  <option value="Ecuador">
+	  <option value="Egypt">
+	  <option value="El Salvador">
+	  <option value="Estonia">
+	  <option value="Ethiopia">
+	  <option value="Fiji">
+	  <option value="Finland">
+	  <option value="France">
+	  <option value="Georgia">
+	  <option value="Germany">
+	  <option value="Ghana">
+	  <option value="Greece">
+	  <option value="Guinea">
+	  <option value="Guyana">
+	  <option value="Haiti">
+	  <option value="Honduras">
+	  <option value="Hong Kong">
+	  <option value="Hungary">
+	  <option value="Iceland">
+	  <option value="India">
+	  <option value="Indonesia">
+	  <option value="Iran">
+	  <option value="Iraq">
+	  <option value="Ireland">
+	  <option value="Israel">
+	  <option value="Italy">
+	  <option value="Jamaica">
+	  <option value="Japan">
+	  <option value="Jordan">
+	  <option value="Kazakhstan">
+	  <option value="Kenya">
+	  <option value="Kiribati">
+	  <option value="Kuwait">
+	  <option value="Laos">
+	  <option value="Lebanon">
+	  <option value="Liberia">
+	  <option value="Libya">
+	  <option value="Luxemburg">
+	  <option value="Macau">
+	  <option value="Macedonia">
+	  <option value="Madagascar">
+	  <option value="Malaysia">
+	  <option value="Maldives">
+	  <option value="Mali">
+	  <option value="Malta">
+	  <option value="Mauritius">
+	  <option value="Mexico">
+	  <option value="Monaco">
+	  <option value="Mongolia">
+	  <option value="Morocco">
+	  <option value="Mozambique">
+	  <option value="Namibia">
+	  <option value="Nepal">
+	  <option value="Netherlands">
+	  <option value="New Zealand">
+	  <option value="Niger">
+	  <option value="Nigeria">
+	  <option value="North Korea">
+	  <option value="Norway">
+	  <option value="Oman">
+	  <option value="Pakistan">
+	  <option value="Palau">
+	  <option value="Paraguay">
+	  <option value="Peru">
+	  <option value="Philippines">
+	  <option value="Poland">
+	  <option value="Portugal">
+	  <option value="Qatar">
+	  <option value="Romania">
+	  <option value="Russia">
+	  <option value="Rwanda">
+	  <option value="Saint Lucia">
+	  <option value="Saudi Arabia">
+	  <option value="Serbia">
+	  <option value="Singapore">
+	  <option value="Slovakia">
+	  <option value="Slovenia">
+	  <option value="Somalia">
+	  <option value="South Africa">
+	  <option value="South Korea">
+	  <option value="South Sudan">
+	  <option value="Spain">
+	  <option value="Sri Lanka">
+	  <option value="Sudan">
+	  <option value="Sweden">
+	  <option value="Switzerland">
+	  <option value="Syria">
+	  <option value="Taiwan">
+	  <option value="Thailand">
+	  <option value="Tunisia">
+	  <option value="Turkey">
+	  <option value="Uganda">
+	  <option value="Ukraine">
+	  <option value="United Arab Emirates">
+	  <option value="United Kingdom">
+	  <option value="Uruguay">
+	  <option value="Uzbekistan">
+	  <option value="Venezuela">
+	  <option value="Vietnam">
+	  <option value="Yemen">
+	  <option value="Zambia">
+	  <option value="Zimbabwe">
+	</datalist>
+	<br><br>
+		<!--State/County:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="text" name="state">
+		<br><br>
+		City/District:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="text" name="city">
+		<br><br>-->
+		<!--Time Zone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <input list="timezone" name="timezone">
+	<datalist id="timezone">
+	  <option value="GMT +00:00">
+	  <option value="GMT +01:00">
+	  <option value="GMT +02:00">
+	  <option value="GMT +03:00">
+	  <option value="GMT +03:30">
+	  <option value="GMT +04:00">
+	  <option value="GMT +04:30">
+	  <option value="GMT +05:00">
+	  <option value="GMT +05:30">
+	  <option value="GMT +06:00">
+	  <option value="GMT +06:30">
+	  <option value="GMT +07:00">
+	  <option value="GMT +08:00">
+	  <option value="GMT +09:00">
+	  <option value="GMT +10:00">
+	  <option value="GMT +10:30">
+	  <option value="GMT +11:00">
+	  <option value="GMT +11:30">
+	  <option value="GMT +12:00">
+	  <option value="GMT +13:00">
+	  <option value="GMT +14:00">
+	  <option value="GMT -01:00">
+	  <option value="GMT -02:00">
+	  <option value="GMT -03:00">
+	  <option value="GMT -03:30">
+	  <option value="GMT -04:00">
+	  <option value="GMT -05:00">
+	  <option value="GMT -06:00">
+	  <option value="GMT -07:00">
+	  <option value="GMT -08:00">
+	  <option value="GMT -08:30">
+	  <option value="GMT -09:00">
+	  <option value="GMT -09:30">  
+	  <option value="GMT -10:00">
+	  <option value="GMT -11:00">
+	  <option value="GMT -12:00">
+	  </datalist>
+	  <br><br>
+	  Post Code/Zip Code:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="number" name="code" required>
+		<br><br>-->
+		Select a hint question:
+		<input list="hint" name="hint" required>
+	<datalist id="hint">
+	  <option value="Where were you born?">
+	  <option value="What is your favourite book's name?">
+	  <option value="What is your nickname?">
+	  <option value="What is your mother's name?">
+	  <option value="What is your father's middle name?">
+	  </datalist>
+	  <br><br>
+	  Answer:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <input type="text" name="answer" required>&nbsp;&nbsp;&nbsp;&nbsp;
+	  <br>
+	  <input type="checkbox" name="t&c" value="t&c" required> I have read <a href="../Pages/t&c.htm" target="_blank" style="text-decoration:none; color:black;">Terms & Conditions</a>
+	  </fieldset>
+	  <input type="submit" value="Next">
+	  <input type="reset" value="Reset">
+	</form>
+	</div>
+</body>	
+</html>

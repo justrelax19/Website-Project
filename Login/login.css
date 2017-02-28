@@ -1,0 +1,38 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+body	{
+	background-image: url(../Images/img10.jpg);
+	background-size: cover;
+	background-repeat : no-repeat;
+	font-family:'pt sans',cursive;
+	font-size:normal;
+	text-align:center;
+	color:white;
+}
+a:link{
+	color:white;
+	text-decoration:none;
+	outline:none;
+}
+a:visited{
+	color:silver;
+	text-decoration:none;
+}
+a:hover{
+	color:#3377ff;
+	text-decoration:underline;
+}
+a:active{
+	text-decoration:none;
+
+}
+#allcontent	{
+	width:800px;
+	padding : 0px 20px 0px 20px;
+	margin-left : auto;
+	margin-right : auto;
+}
+form{
+	margin:200px 170px 10px 170px;
+	padding:1px 0px 30px 0px;
+	background-color:blue;
+}
